@@ -1,7 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, {  useState } from "react";
 import { AddInput } from "./components/AddInput";
 import { TodoItem } from "./components/TodoItem";
-import axios from 'axios';
 
 const styles = {
   header: {
@@ -13,7 +12,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
   },
-  todolist: {
+  todoList: {
     width: "100%",
     listStyle: "none",
   },
@@ -28,15 +27,13 @@ const styles = {
 function App() {
   const [todos, setTodos] = useState([]);
 
-  const addTodo = useCallback((content) => { }, []);
-
-  const handleChange = useCallback(() => { }, []);
+  const addTodo = (content) => { };
 
   return (
     <div style={styles.wrapper}>
       <div style={styles.header}>Todo List</div>
       <AddInput onAdd={addTodo} />
-      <ul style={styles.todolist}>
+      <ul style={styles.todoList}>
         {todos.map((todo) => (
           <TodoItem {...todo} />
         ))}

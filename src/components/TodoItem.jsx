@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
 
 const styles = {
   wrapper: {
@@ -33,9 +32,7 @@ const styles = {
 };
 
 export const TodoItem = ({
-  id,
   content,
-  onClick,
 }) => {
   return (
     <label style={styles.wrapper}>
