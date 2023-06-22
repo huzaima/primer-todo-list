@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+## React Todo List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This exercise aims to create a working todo list app. To start with, we have premade styles for todo items. Although there’s no operating mechanism for adding, completing, and deleting a todo.
 
-## Available Scripts
+## READ ALL THE INSTRUCTIONS BELOW BEFORE STARTING THE EXERCISE
 
-In the project directory, you can run:
+## Requirements
 
-### `npm start`
+1. The todo list state should be loaded from the API.
+2. User should be able to add todo.
+3. Clicking on a todo item should complete the todo in the backend via API.
+4. Allow todos to be deleted. There should be a button 'X' on the far right side. Clicking the X should delete the todo in the backend.
+5. The most recently added todo should appear on the top.
+6. [Bonus] There should be a search bar to search through the todos. It should support client-side fuzzy matching.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notes:
+1. You are free to use Google for any help you need.
+2. You are free to use any npm package.
+3. Your assessment will be done based on: 
+   - completeness of requirements
+   - React best practices.
+   
+## API Reference:
+1. Get all todos:
+	- `curl -X GET https://api.todoist.com/rest/v2/tasks -H "Authorization: Bearer $token"`
+2. Create todo:
+	- `curl https://api.todoist.com/rest/v2/tasks -X POST --data '{"content": "Buy Milk"}' -H "Authorization: Bearer $token" -H "Content-Type: application/json"`
+3. Complete todo:
+	- `curl -X POST "https://api.todoist.com/rest/v2/tasks/:id/close" -H "Authorization: Bearer $token"`
+4. Delete todo:
+	- `curl -X DELETE "https://api.todoist.com/rest/v2/tasks/:id" -H "Authorization: Bearer $token"`
